@@ -1,0 +1,3 @@
+Analyze live nginx access logs for reqs/sec and average time per request
+
+Based on RailsStat, from Rails Analyzer Tools by Seattle.rb

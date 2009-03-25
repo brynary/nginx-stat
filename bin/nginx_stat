@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby -w
+
+require File.expand_path(File.dirname(__FILE__) + '/../lib/nginx_stat')
+
+if ARGV.length < 1 then
+  $stderr.puts "Usage: #{$0} NGINX_LOG [...] [PRINT_INTERVAL]"
+  exit 1
+end
+
+NginxStat.start(*ARGV)
+
