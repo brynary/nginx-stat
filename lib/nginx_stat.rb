@@ -29,17 +29,17 @@ class NginxStat
 
     stats = []
 
-    if args.length > 1 and not defined? Curses then
-      $stderr.puts "Multiple logfile support requires curses"
-      exit 1
-    end
+    # if args.length > 1 and not defined? Curses then
+    #   $stderr.puts "Multiple logfile support requires curses"
+    #   exit 1
+    # end
 
-    if defined? Curses then
-      Curses.init_screen
-      Curses.clear
-      Curses.addstr "Collecting data...\n"
-      Curses.refresh
-    end
+    # if defined? Curses then
+    #   Curses.init_screen
+    #   Curses.clear
+    #   Curses.addstr "Collecting data...\n"
+    #   Curses.refresh
+    # end
 
     args.each_with_index do |filename, offset|
       stat = self.new File.open(filename), interval, offset
@@ -91,19 +91,19 @@ class NginxStat
   end
 
   def print
-    if defined? Curses then
-      Curses.setpos @offset, 0
-      Curses.addstr ' ' * @last_len
-      Curses.setpos @offset, 0
-      Curses.addstr "#{@io_path}\t#{@status}"
-      Curses.refresh
-    else
-      print "\r"
-      print ' ' * @last_len
-      print "\r"
-      print @status
+    # if defined? Curses then
+    #   Curses.setpos @offset, 0
+    #   Curses.addstr ' ' * @last_len
+    #   Curses.setpos @offset, 0
+    #   Curses.addstr "#{@io_path}\t#{@status}"
+    #   Curses.refresh
+    # else
+    #   print "\r"
+    #   print ' ' * @last_len
+    #   print "\r"
+      puts @status
       $stdout.flush
-    end
+    # end
   end
 
   private
