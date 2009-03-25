@@ -13,7 +13,8 @@ require "nginx_stat/io_tail"
 # Default interval is 10 seconds.
 
 class NginxStat
-
+  VERSION = "0.1.0"
+  
   ##
   #   NginxStat.start 'online-43things.log', 'online-43people.log', 10
   #
